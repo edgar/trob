@@ -1,4 +1,4 @@
-class BortMigration < ActiveRecord::Migration
+class TrobMigration < ActiveRecord::Migration
   def self.up
     # Create Sessions Table
     create_table :sessions do |t|
@@ -79,7 +79,7 @@ class BortMigration < ActiveRecord::Migration
   end
 
   def self.down
-    # Drop all Bort tables
+    # Drop all Trob tables
     drop_table :sessions
     drop_table :users
     drop_table :passwords
