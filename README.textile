@@ -1,19 +1,21 @@
 !http://clients.fudgestudios.com/chester.jpg!
 
-h1. Bort
+h1. Trob
 
-Bort is a base Rails 2.2 application that makes creating new projects easier and faster. Bort is developed and maintained by "Fudge Studios":http://www.fudgestudios.com, "Jim Neath":http://jimneath.org and "Matt Hall":http://matthall.wordpress.com
+Trob is a base Rails 2.2.2 application that makes creating new projects easier and faster. Trob is based in Bort, which is developed and maintained by "Fudge Studios":http://www.fudgestudios.com, "Jim Neath":http://jimneath.org and "Matt Hall":http://matthall.wordpress.com
 
 If you have any suggestions for improvements then feel free to leave a request on "User Voice":http://bort.uservoice.com
 
 h2. Install
 
-* Download and unzip Bort
+* Download and unzip Trob (or do a git clone from git://github.com/edgar/trob.git)
+* cd trob and run 
+    git submodule init
+    git submodule update
 * Edit the database.yml and the settings.yml files
-* Changed the default password in the bort migration
-* Edit the REST_AUTH_SITE_KEY in each of the environment files
+* Changed the default password in the trob migration
+* Edit the REST_AUTH_SITE_KEY in each of the environment files (use rake secret)
 * Rake db:migrate
-* Have a brew and celebrate
 
 h2. Plugins Installed
 
