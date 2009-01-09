@@ -21,6 +21,7 @@ test:
   #timeout: 5000
  
   # Mysql Settings  adapter: mysql
+  adapter: mysql
   encoding: utf8
   database: trob_test
   username: root
@@ -35,6 +36,7 @@ staging:
   #timeout: 5000
  
   # Mysql Settings  adapter: mysql
+  adapter: mysql
   encoding: utf8
   database: trob_staging
   username: root
@@ -49,6 +51,7 @@ production:
   #timeout: 5000
  
   # Mysql Settings  adapter: mysql
+  adapter: mysql
   encoding: utf8
   database: trob_production
   username: root
