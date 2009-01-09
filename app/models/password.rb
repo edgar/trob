@@ -17,3 +17,15 @@ class Password < ActiveRecord::Base
     self.expiration_date = 2.weeks.from_now
   end
 end
+
+# == Schema Info
+# Schema version: 20080929171348
+#
+# Table name: passwords
+#
+#  id              :integer(4)      not null, primary key
+#  user_id         :integer(4)
+#  expiration_date :datetime
+#  reset_code      :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime

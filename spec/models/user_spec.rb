@@ -288,3 +288,25 @@ protected
     record
   end
 end
+
+
+# == Schema Info
+# Schema version: 20080929171348
+#
+# Table name: users
+#
+#  id                        :integer(4)      not null, primary key
+#  activation_code           :string(40)
+#  crypted_password          :string(40)
+#  email                     :string(100)
+#  identity_url              :string(255)
+#  login                     :string(40)
+#  name                      :string(100)     default("")
+#  remember_token            :string(40)
+#  salt                      :string(40)
+#  state                     :string(255)     not null, default("passive")
+#  activated_at              :datetime
+#  created_at                :datetime
+#  deleted_at                :datetime
+#  remember_token_expires_at :datetime
+#  updated_at                :datetime
