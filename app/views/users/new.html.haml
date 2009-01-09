@@ -1,0 +1,31 @@
+- @user.password = @user.password_confirmation = nil
+= title "Signup", :h2
+- form_for @user do |f|
+  = f.error_messages
+  %fieldset
+    %legend
+      Your Details
+    %ol
+      %li
+        = f.label :login, 'Username'
+        = f.text_field :login
+      %li
+        = f.label :email
+        = f.text_field :email
+      %li
+        = f.label :password
+        = f.password_field :password
+      %li
+        = f.label :password_confirmation, 'Confirm Password'
+        = f.password_field :password_confirmation
+  %fieldset
+    %legend
+      Signup with OpenID
+    %ol
+      %li
+        %label{ :for => "openid_url" }
+          OpenID URL
+        = text_field_tag :openid_url, params[:openid_url] || params['openid.identity']
+  .buttons
+    = submit_tag 'Sign up'
+

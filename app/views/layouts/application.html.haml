@@ -1,0 +1,35 @@
+!!! Strict
+%html{ "xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %title
+      = @page_title || APP_CONFIG[:site_name]
+    %meta{ :content => "text/xhtml; charset=utf-8", "http-equiv" => "content-type" }
+    %meta{ :content => "no", "http-equiv" => "imagetoolbar" }
+    %meta{ :name => "distribution", :content => "all" }
+    %meta{ :name => "robots", :content => "all" }
+    %meta{ :name => "resource-type", :content => "document" }
+    %meta{ :name => "MSSmartTagsPreventParsing", :content => "true" }
+    - bundle do
+      = stylesheet_link_tag 'initial', 'form', 'application', :media => 'screen'
+      = javascript_include_tag 'jquery', 'jquery.livequery', 'application'
+    = javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery?
+    = stylesheet_link_tag 'print', :media => 'print'
+    = stylesheet_link_tag 'handheld', :media => 'handheld'
+    /[if lte IE 6]
+      = stylesheet_link_tag 'ie_6'
+    %link{ :href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon" }
+  %body
+    #container
+      #header
+        %ul
+          - if logged_in?
+            %li
+              = link_to 'Logout', logout_path
+          - else
+            %li
+              = link_to 'Login', login_path
+            %li
+              = link_to 'Signup', signup_path
+      #content
+        = flash_messages
+        = yield :layout

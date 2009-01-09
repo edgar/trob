@@ -6,8 +6,13 @@ class PasswordsController < ApplicationController
   def create
     @password = Password.new(params[:password])
     @password.user = User.find_by_email(@password.email)
+    unless @password.user
+      flash[:notice] = "There is no user with this email: #{@password.email}."
+      render :action => :new
+      return
+    end
     
-    if @password.save
+    if @password.user && @password.save
       PasswordMailer.deliver_forgot_password(@password)
       flash[:notice] = "A link to change your password has been sent to #{@password.email}."
       redirect_to :action => :new
