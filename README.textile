@@ -1,5 +1,3 @@
-!http://clients.fudgestudios.com/chester.jpg!
-
 h1. Trob
 
 Trob is a base Rails 2.2.2 application that makes creating new projects easier and faster. Trob is based in Bort, which is developed and maintained by "Fudge Studios":http://www.fudgestudios.com, "Jim Neath":http://jimneath.org and "Matt Hall":http://matthall.wordpress.com
